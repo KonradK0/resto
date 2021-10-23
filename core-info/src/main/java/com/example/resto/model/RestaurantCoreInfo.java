@@ -5,6 +5,7 @@ import org.hibernate.annotations.Immutable;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity(name="RESTAURANTCOREINFO")
@@ -109,5 +110,18 @@ public class RestaurantCoreInfo {
 
     public double getRating() {
         return rating;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RestaurantCoreInfo that = (RestaurantCoreInfo) o;
+        return pricingRange == that.pricingRange && ratingSum == that.ratingSum && numOfRatings == that.numOfRatings && Double.compare(that.rating, rating) == 0 && name.equals(that.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, pricingRange, ratingSum, numOfRatings, rating);
     }
 }
