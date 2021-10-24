@@ -1,9 +1,17 @@
 package com.example.resto.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity(name = "CUISINE")
+@Getter
+@Setter
+@NoArgsConstructor
 public class Cuisine {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,29 +23,10 @@ public class Cuisine {
     @ManyToMany(mappedBy = "cuisines", fetch = FetchType.EAGER)
     Set<RestaurantCoreInfo> restaurants;
 
-    public Cuisine() {
-
-    }
-
     public Cuisine(String name) {
         this.name = name;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     @Override
     public String toString() {
@@ -46,11 +35,16 @@ public class Cuisine {
                 '}';
     }
 
-    public Set<RestaurantCoreInfo> getRestaurants() {
-        return restaurants;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cuisine cuisine = (Cuisine) o;
+        return name.equals(cuisine.name);
     }
 
-    public void setRestaurants(Set<RestaurantCoreInfo> restaurants) {
-        this.restaurants = restaurants;
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }

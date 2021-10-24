@@ -1,5 +1,8 @@
 package com.example.resto.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.Formula;
 import org.hibernate.annotations.Immutable;
 
@@ -10,6 +13,9 @@ import java.util.Set;
 
 @Entity(name="RESTAURANTCOREINFO")
 @Immutable
+@Getter
+@Setter
+@NoArgsConstructor
 public class RestaurantCoreInfo {
 
     @Id
@@ -39,9 +45,6 @@ public class RestaurantCoreInfo {
     )
     Set<Cuisine> cuisines;
 
-    public RestaurantCoreInfo() {
-    }
-
     public RestaurantCoreInfo(String name, int pricingRange, int ratingSum, int numOfRatings) {
         this.name = name;
         this.pricingRange = pricingRange;
@@ -49,55 +52,6 @@ public class RestaurantCoreInfo {
         this.numOfRatings = numOfRatings;
         this.cuisines = new HashSet<>();
     }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getPricingRange() {
-        return pricingRange;
-    }
-
-    public void setPricingRange(int pricingRange) {
-        this.pricingRange = pricingRange;
-    }
-
-    public int getRatingSum() {
-        return ratingSum;
-    }
-
-    public void setRatingSum(int ratingSum) {
-        this.ratingSum = ratingSum;
-    }
-
-    public int getNumOfRatings() {
-        return numOfRatings;
-    }
-
-    public void setNumOfRatings(int numOfRatings) {
-        this.numOfRatings = numOfRatings;
-    }
-
-    public Set<Cuisine> getCuisines() {
-        return cuisines;
-    }
-
-    public void setCuisines(Set<Cuisine> cuisines) {
-        this.cuisines = cuisines;
-    }
-
     @Override
     public String toString() {
         return "RestaurantCoreInfo{" +
@@ -106,10 +60,6 @@ public class RestaurantCoreInfo {
                 ", rating=" + rating +
                 ", cuisines=" + cuisines +
                 '}';
-    }
-
-    public double getRating() {
-        return rating;
     }
 
     @Override
