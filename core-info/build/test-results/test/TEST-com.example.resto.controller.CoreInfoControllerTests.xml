@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.resto.controller.CoreInfoControllerTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-10-25T18:17:42" hostname="KKOMP" time="0.375">
+  <properties/>
+  <testcase name="testFindByCuisineName()" classname="com.example.resto.controller.CoreInfoControllerTests" time="0.304"/>
+  <testcase name="testFindByName()" classname="com.example.resto.controller.CoreInfoControllerTests" time="0.02"/>
+  <testcase name="testFindRatingRangeBetween()" classname="com.example.resto.controller.CoreInfoControllerTests" time="0.026"/>
+  <testcase name="testFindPricingRangeBetween()" classname="com.example.resto.controller.CoreInfoControllerTests" time="0.02"/>
+  <system-out><![CDATA[20:17:39.334 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+20:17:39.348 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+20:17:39.408 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.example.resto.controller.CoreInfoControllerTests] from class [org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper]
+20:17:39.423 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.resto.controller.CoreInfoControllerTests], using SpringBootContextLoader
+20:17:39.428 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.resto.controller.CoreInfoControllerTests]: class path resource [com/example/resto/controller/CoreInfoControllerTests-context.xml] does not exist
+20:17:39.433 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.resto.controller.CoreInfoControllerTests]: class path resource [com/example/resto/controller/CoreInfoControllerTestsContext.groovy] does not exist
+20:17:39.433 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.example.resto.controller.CoreInfoControllerTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+20:17:39.433 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.resto.controller.CoreInfoControllerTests]: CoreInfoControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:17:39.528 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.example.resto.controller.CoreInfoControllerTests]
+20:17:39.604 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\Konrad\Documents\edu\resto\core-info\build\classes\java\main\com\example\resto\RestoApplication.class]
+20:17:39.609 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.resto.RestoApplication for test class com.example.resto.controller.CoreInfoControllerTests
+20:17:39.614 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - @TestExecutionListeners is not present for class [com.example.resto.controller.CoreInfoControllerTests]: using defaults.
+20:17:39.614 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+20:17:39.638 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@534e194, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@47b8489b, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@49032825, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@7605a2ed, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@541fc5f8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@51e6b370, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1f4eb69, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@5a3d2370, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@70271dca, org.springframework.test.context.event.EventPublishingTestExecutionListener@14be5d8d, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@323743d0, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1a2d045, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@492354f6, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2f173a6a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2736d59b, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@300109c0, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@63d66fd2]
+20:17:39.644 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@79823ee4 testClass = CoreInfoControllerTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@73f3cb1b testClass = CoreInfoControllerTests, locations = '{}', classes = '{class com.example.resto.RestoApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@5afac25b, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@27887572, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@de261847, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@33d28d4d, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@495e39c0, [ImportsContextCustomizer@583cd59d key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration, org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.jsonb.JsonbAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3b768530, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@55056065, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@6289c032, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+20:17:39.859 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.5.4)
+
+2021-10-25 20:17:40.299  INFO 15088 --- [    Test worker] c.e.r.c.CoreInfoControllerTests          : Starting CoreInfoControllerTests using Java 16.0.2 on KKomp with PID 15088 (started by Konrad in C:\Users\Konrad\Documents\edu\resto\core-info)
+2021-10-25 20:17:40.304  INFO 15088 --- [    Test worker] c.e.r.c.CoreInfoControllerTests          : No active profile set, falling back to default profiles: default
+2021-10-25 20:17:42.524  INFO 15088 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-10-25 20:17:42.524  INFO 15088 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-10-25 20:17:42.529  INFO 15088 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 5 ms
+2021-10-25 20:17:42.568  INFO 15088 --- [    Test worker] c.e.r.c.CoreInfoControllerTests          : Started CoreInfoControllerTests in 2.696 seconds (JVM running for 4.333)
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/public/coreinfo/cuisine/italian
+       Parameters = {current_ids=[1,2]}
+          Headers = []
+             Body = null
+    Session Attrs = {user=User(email=null, email_verified=false, family_name=null, given_name=null, locale=null, name=null, nickname=null, picture=null, sub=null, updated_at=null)}
+
+Handler:
+             Type = com.example.resto.controller.CoreInfoController
+           Method = com.example.resto.controller.CoreInfoController#findByCuisines_Name(Optional, String, String, Optional, HttpServletResponse)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = [{"id":null,"name":"Italian Restaurant","pricingRange":1,"ratingSum":120,"numOfRatings":33,"rating":0.0,"cuisines":[]}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/public/coreinfo/Restaurant_1
+       Parameters = {current_ids=[1,2]}
+          Headers = []
+             Body = null
+    Session Attrs = {user=User(email=null, email_verified=false, family_name=null, given_name=null, locale=null, name=null, nickname=null, picture=null, sub=null, updated_at=null)}
+
+Handler:
+             Type = com.example.resto.controller.CoreInfoController
+           Method = com.example.resto.controller.CoreInfoController#findByName(Optional, String, String, Optional, HttpServletResponse)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = [{"id":1,"name":"Japanese Restaurant","pricingRange":2,"ratingSum":50,"numOfRatings":12,"rating":0.0,"cuisines":[]}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/public/coreinfo/rating
+       Parameters = {low=[1], high=[2], current_ids=[1,2]}
+          Headers = []
+             Body = null
+    Session Attrs = {user=User(email=null, email_verified=false, family_name=null, given_name=null, locale=null, name=null, nickname=null, picture=null, sub=null, updated_at=null)}
+
+Handler:
+             Type = com.example.resto.controller.CoreInfoController
+           Method = com.example.resto.controller.CoreInfoController#findRatingRangeBetween(Optional, String, int, int, Optional, HttpServletResponse)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = [{"id":null,"name":"Italian Restaurant","pricingRange":1,"ratingSum":120,"numOfRatings":33,"rating":0.0,"cuisines":[]}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/public/coreinfo/pricingrange
+       Parameters = {low=[1], high=[2], current_ids=[1,2]}
+          Headers = []
+             Body = null
+    Session Attrs = {user=User(email=null, email_verified=false, family_name=null, given_name=null, locale=null, name=null, nickname=null, picture=null, sub=null, updated_at=null)}
+
+Handler:
+             Type = com.example.resto.controller.CoreInfoController
+           Method = com.example.resto.controller.CoreInfoController#findPricingRangeBetween(Optional, String, int, int, Optional, HttpServletResponse)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Type:"application/json"]
+     Content type = application/json
+             Body = [{"id":null,"name":"Italian Restaurant","pricingRange":1,"ratingSum":120,"numOfRatings":33,"rating":0.0,"cuisines":[]}]
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

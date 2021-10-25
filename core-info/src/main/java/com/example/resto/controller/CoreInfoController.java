@@ -29,7 +29,7 @@ public class CoreInfoController {
     public List<RestaurantCoreInfo> findByName(@SessionAttribute Optional<User> user,
                                                @PathVariable String scope,
                                                @PathVariable String name,
-                                               @RequestParam(required = false) String[] current_ids,
+                                               @RequestParam Optional<String[]> current_ids,
                                                HttpServletResponse res) {
         if (user.isPresent()) {
             return this.coreInfoService.findByName(name, current_ids);
@@ -42,7 +42,7 @@ public class CoreInfoController {
     List<RestaurantCoreInfo> findByCuisines_Name(@SessionAttribute Optional<User> user,
                                                  @PathVariable String scope,
                                                  @PathVariable String cuisineName,
-                                                 @RequestParam(required = false) String[] current_ids,
+                                                 @RequestParam Optional<String[]> current_ids,
                                                  HttpServletResponse res) {
         if (user.isPresent()) {
             return this.coreInfoService.findByCuisineName(cuisineName, current_ids);
@@ -56,7 +56,7 @@ public class CoreInfoController {
                                                      @PathVariable String scope,
                                                      @RequestParam int low,
                                                      @RequestParam int high,
-                                                     @RequestParam(required = false) String[] current_ids,
+                                                     @RequestParam Optional<String[]> current_ids,
                                                      HttpServletResponse res) {
         if (user.isPresent()) {
             return this.coreInfoService.findPricingRangeBetween(low, high, current_ids);
@@ -70,7 +70,7 @@ public class CoreInfoController {
                                                     @PathVariable String scope,
                                                     @RequestParam int low,
                                                     @RequestParam int high,
-                                                    @RequestParam(required = false) String[] current_ids,
+                                                    @RequestParam Optional<String[]> current_ids,
                                                     HttpServletResponse res) {
         if (user.isPresent()) {
             return this.coreInfoService.findRatingBetween(low, high, current_ids);

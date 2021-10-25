@@ -35,7 +35,7 @@ public class CoreInfoServiceTests {
                 .thenReturn(Optional.of(italianRestaurant2));
         String[] currents = {"1", "2", "3"};
 
-        List<RestaurantCoreInfo> actual = this.coreInfoService.findByName("Italian Restaurant", currents);
+        List<RestaurantCoreInfo> actual = this.coreInfoService.findByName("Italian Restaurant", Optional.of(currents));
 
         List<RestaurantCoreInfo> expected = List.of(italianRestaurant, italianRestaurant2);
         assertThat(expected).hasSameElementsAs(actual);
@@ -58,7 +58,7 @@ public class CoreInfoServiceTests {
                 .thenReturn(Optional.of(japaneseRestaurant2));
         String[] currents = {"1", "2", "3", "4"};
 
-        List<RestaurantCoreInfo> actual = this.coreInfoService.findByCuisineName("Japanese", currents);
+        List<RestaurantCoreInfo> actual = this.coreInfoService.findByCuisineName("Japanese", Optional.of(currents));
 
         List<RestaurantCoreInfo> expected = List.of(japaneseRestaurant, japaneseRestaurant2);
         assertThat(expected).hasSameElementsAs(actual);
@@ -81,7 +81,7 @@ public class CoreInfoServiceTests {
                 .thenReturn(Optional.of(japaneseRestaurant2));
         String[] currents = {"1", "2", "3", "4"};
 
-        List<RestaurantCoreInfo> actual = this.coreInfoService.findPricingRangeBetween(1, 2, currents);
+        List<RestaurantCoreInfo> actual = this.coreInfoService.findPricingRangeBetween(1, 2, Optional.of(currents));
 
         List<RestaurantCoreInfo> expected = List.of(italianRestaurant, americanRestaurant, japaneseRestaurant);
         assertThat(expected).hasSameElementsAs(actual);
@@ -105,7 +105,7 @@ public class CoreInfoServiceTests {
                 .thenReturn(Optional.of(japaneseRestaurant2));
         String[] currents = {"1", "2", "3", "4"};
 
-        List<RestaurantCoreInfo> actual = this.coreInfoService.findRatingBetween(2, 4, currents);
+        List<RestaurantCoreInfo> actual = this.coreInfoService.findRatingBetween(2, 4, Optional.of(currents));
 
         List<RestaurantCoreInfo> expected = List.of(italianRestaurant, americanRestaurant);
         assertThat(expected).hasSameElementsAs(actual);

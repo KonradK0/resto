@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -24,39 +23,39 @@ public class CoreInfoService {
         this.coreInfoRepository = coreInfoRepository;
     }
 
-    public List<RestaurantCoreInfo> findByName(String name, String[] current_ids) {
-        if (current_ids != null) {
+    public List<RestaurantCoreInfo> findByName(String name, Optional<String[]> current_ids) {
+        if (current_ids.isPresent()) {
             Predicate<RestaurantCoreInfo> nameEqualsPredicate = rci -> rci.getName().equals(name);
-            return getRestaurantCoreInfos(current_ids, nameEqualsPredicate);
+            return getRestaurantCoreInfos(current_ids.get(), nameEqualsPredicate);
         }
         return this.coreInfoRepository.findByName(name);
     }
 
-    public List<RestaurantCoreInfo> findByCuisineName(String cuisineName, String[] current_ids) {
-        if (current_ids != null) {
+    public List<RestaurantCoreInfo> findByCuisineName(String cuisineName, Optional<String[]> current_ids) {
+        if (current_ids.isPresent()) {
             Predicate<RestaurantCoreInfo> cuisineNameInRestCuisinesPredicate = rci -> rci
                     .getCuisines()
                     .stream()
                     .map(Cuisine::getName)
                     .anyMatch(name -> name.equals(cuisineName));
-            return getRestaurantCoreInfos(current_ids, cuisineNameInRestCuisinesPredicate);
+            return getRestaurantCoreInfos(current_ids.get(), cuisineNameInRestCuisinesPredicate);
 
         }
         return this.coreInfoRepository.findByCuisines_Name(cuisineName);
     }
 
-    public List<RestaurantCoreInfo> findPricingRangeBetween(int low, int high, String[] current_ids) {
-        if (current_ids != null) {
+    public List<RestaurantCoreInfo> findPricingRangeBetween(int low, int high, Optional<String[]> current_ids) {
+        if (current_ids.isPresent()) {
             Predicate<RestaurantCoreInfo> pricingRangeBetweenPredicate = rci -> (Utils.isBetween(rci.getPricingRange(), low, high));
-            return getRestaurantCoreInfos(current_ids, pricingRangeBetweenPredicate);
+            return getRestaurantCoreInfos(current_ids.get(), pricingRangeBetweenPredicate);
         }
         return this.coreInfoRepository.findPricingRangeBetween(low, high);
     }
 
-    public List<RestaurantCoreInfo> findRatingBetween(double low, double high, String[] current_ids){
-        if (current_ids != null) {
+    public List<RestaurantCoreInfo> findRatingBetween(double low, double high, Optional<String[]> current_ids){
+        if (current_ids.isPresent()) {
             Predicate<RestaurantCoreInfo> findRatingBetweenPredicate = rci -> (Utils.isBetween(rci.getRating(), low, high));
-            return getRestaurantCoreInfos(current_ids, findRatingBetweenPredicate);
+            return getRestaurantCoreInfos(current_ids.get(), findRatingBetweenPredicate);
         }
         return this.coreInfoRepository.findRatingBetween(low, high);
     }
