@@ -6,13 +6,14 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.servlet.AsyncHandlerInterceptor;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Component
-public class RestInterceptorAll extends HandlerInterceptorAdapter {
+public class RestInterceptorAll implements AsyncHandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest req, HttpServletResponse res, Object handler) throws Exception {
@@ -21,7 +22,7 @@ public class RestInterceptorAll extends HandlerInterceptorAdapter {
             HttpEntity<String> entity = new HttpEntity<>("headers", headers);
             User user = getUserInfoFromAuthService(entity);
             req.getSession().setAttribute("user", user);
-            return super.preHandle(req, res, handler);
+            return true;
         } catch (Exception e) {
             // Users "access_token" is wrong so we should notify them that they're unauthorized (401)
             res.sendError(401, "401 Unauthorized");

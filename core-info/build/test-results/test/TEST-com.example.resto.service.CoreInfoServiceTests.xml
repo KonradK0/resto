@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.resto.service.CoreInfoServiceTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-10-25T16:47:00" hostname="KKOMP" time="0.241">
+  <properties/>
+  <testcase name="testFindByCuisineName()" classname="com.example.resto.service.CoreInfoServiceTests" time="0.182"/>
+  <testcase name="testFindByName()" classname="com.example.resto.service.CoreInfoServiceTests" time="0.003"/>
+  <testcase name="testRatingBetween()" classname="com.example.resto.service.CoreInfoServiceTests" time="0.048"/>
+  <testcase name="testFindPricingRangeBetween()" classname="com.example.resto.service.CoreInfoServiceTests" time="0.006"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

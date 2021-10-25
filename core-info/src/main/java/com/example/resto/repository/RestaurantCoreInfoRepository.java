@@ -10,7 +10,11 @@ import java.util.List;
 public interface RestaurantCoreInfoRepository extends CrudRepository<RestaurantCoreInfo, Long> {
     List<RestaurantCoreInfo> findByName(String name);
 
-    RestaurantCoreInfo findById(long id);
+//    RestaurantCoreInfo findById(long id);
 
     List<RestaurantCoreInfo> findByCuisines_Name(String CuisineName);
+
+    List<RestaurantCoreInfo> findPricingRangeBetween(int low, int high);
+
+    List<RestaurantCoreInfo> findRatingBetween(double low, double high);
 }

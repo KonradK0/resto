@@ -5,25 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f18582b-2c7f-48a1-96d1-2a47cb77fdfe" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../auth/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../auth/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/resto/configs/MvcConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/resto/interceptors/RestInterceptorAll.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/resto/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/resto/util/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resto_classes.drawio" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/resto/controller/CoreInfoControllerTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/resto/service/CoreInfoServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/build/classes/java/main/com/example/auth/AuthApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/build/classes/java/main/com/example/auth/configs/MvcConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/build/classes/java/main/com/example/auth/controllers/ValidateController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/build/classes/java/main/com/example/auth/interceptor/RestInterceptorAll.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/build/classes/java/main/com/example/auth/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/build/resources/main/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/build/resources/main/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../auth/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/resto/controller/CoreInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/resto/controller/CoreInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/resto/model/Cuisine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/resto/model/Cuisine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/resto/model/RestaurantCoreInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/resto/model/RestaurantCoreInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/resto/RestoApplicationTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/resto/model/CuisineTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/resto/model/RestaurantCoreInfoTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/resto/interceptors/RestInterceptorAll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/resto/interceptors/RestInterceptorAll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/resto/repository/RestaurantCoreInfoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/resto/repository/RestaurantCoreInfoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/resto/service/CoreInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/resto/service/CoreInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/resto/util/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/resto/util/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/resto/CoreInfoControllerTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,18 +52,7 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="resto" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="resto" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="resto" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
+                <item name="core-info" type="f1a62948:ProjectNode" />
               </path>
             </expand>
             <select />
@@ -125,13 +120,13 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools.jpab" />
   </component>
-  <component name="RunManager" selected="Gradle.CoreInfoControllerTests">
-    <configuration name="CoreInfoControllerTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.CoreInfoServiceTests">
+    <configuration name="CoreInfoServiceTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.resto.CoreInfoControllerTests&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.resto.service.CoreInfoServiceTests&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -147,12 +142,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="CoreInfoControllerTests.testFindByCuisineName" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CoreInfoServiceTests.testFindByCuisineName" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.resto.CoreInfoControllerTests.testFindByCuisineName&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.resto.service.CoreInfoServiceTests.testFindByCuisineName&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -168,12 +163,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RestaurantCoreInfoTests.addRestaurantCoreInfoTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CoreInfoServiceTests.testFindByCuisineNameWithCurrents" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.example.resto.model.RestaurantCoreInfoTests.addRestaurantCoreInfoTest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;com.example.resto.service.CoreInfoServiceTests.testFindByCuisineNameWithCurrents&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -189,44 +184,44 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="core-info [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CoreInfoServiceTests.testFindPricingRangeBetween" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="--tests &quot;com.example.resto.service.CoreInfoServiceTests.testFindPricingRangeBetween&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="build" />
+            <option value=":test" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="core-info [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CoreInfoServiceTests.testRatingBetween" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="--tests &quot;com.example.resto.service.CoreInfoServiceTests.testRatingBetween&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="clean" />
+            <option value=":test" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -247,11 +242,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.CoreInfoControllerTests" />
-        <item itemvalue="Gradle.CoreInfoControllerTests.testFindByCuisineName" />
-        <item itemvalue="Gradle.core-info [build]" />
-        <item itemvalue="Gradle.core-info [clean]" />
-        <item itemvalue="Gradle.CoreInfoControllerTests" />
+        <item itemvalue="Gradle.CoreInfoServiceTests" />
+        <item itemvalue="Gradle.CoreInfoServiceTests.testFindByCuisineName" />
+        <item itemvalue="Gradle.CoreInfoServiceTests.testRatingBetween" />
+        <item itemvalue="Gradle.CoreInfoServiceTests.testFindPricingRangeBetween" />
+        <item itemvalue="Gradle.CoreInfoServiceTests.testFindByCuisineNameWithCurrents" />
       </list>
     </recent_temporary>
   </component>
@@ -275,6 +270,7 @@
       <workItem from="1635022516900" duration="484000" />
       <workItem from="1635067451535" duration="88000" />
       <workItem from="1635093182892" duration="3465000" />
+      <workItem from="1635152841416" duration="13835000" />
     </task>
     <servers />
   </component>
@@ -292,5 +288,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/example/resto/controller/CoreInfoControllerTests.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

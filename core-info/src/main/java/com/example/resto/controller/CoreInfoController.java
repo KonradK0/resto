@@ -12,7 +12,10 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping(value = "api/{scope}/coreinfo", produces = MediaType.APPLICATION_JSON_VALUE)
+@RequestMapping(
+        value = "api/{scope}/coreinfo",
+        produces = MediaType.APPLICATION_JSON_VALUE
+)
 public class CoreInfoController {
 
     private final CoreInfoService coreInfoService;
@@ -25,9 +28,10 @@ public class CoreInfoController {
     public List<RestaurantCoreInfo> findByName(@SessionAttribute User user,
                                                @PathVariable String scope,
                                                @PathVariable String name,
+                                               @RequestParam(required = false) String[] current_ids,
                                                HttpServletResponse res) {
         if (user != null) {
-            return this.coreInfoService.findByName(name);
+            return this.coreInfoService.findByName(name, current_ids);
         } else {
             return Utils.unauthorizedAccess(res);
         }
@@ -37,9 +41,38 @@ public class CoreInfoController {
     List<RestaurantCoreInfo> findByCuisines_Name(@SessionAttribute User user,
                                                  @PathVariable String scope,
                                                  @PathVariable String cuisineName,
+                                                 @RequestParam(required = false) String[] current_ids,
                                                  HttpServletResponse res) {
         if (user != null) {
-            return this.coreInfoService.findByCuisineName(cuisineName);
+            return this.coreInfoService.findByCuisineName(cuisineName, current_ids);
+        } else {
+            return Utils.unauthorizedAccess(res);
+        }
+    }
+
+    @GetMapping(value = "/pricingrange")
+    List<RestaurantCoreInfo> findPricingRangeBetween(@SessionAttribute User user,
+                                                     @PathVariable String scope,
+                                                     @RequestParam int low,
+                                                     @RequestParam int high,
+                                                     @RequestParam(required = false) String[] current_ids,
+                                                     HttpServletResponse res) {
+        if (user != null) {
+            return this.coreInfoService.findPricingRangeBetween(low, high, current_ids);
+        } else {
+            return Utils.unauthorizedAccess(res);
+        }
+    }
+
+    @GetMapping(value = "/rating")
+    List<RestaurantCoreInfo> findRatingRangeBetween(@SessionAttribute User user,
+                                                    @PathVariable String scope,
+                                                    @RequestParam int low,
+                                                    @RequestParam int high,
+                                                    @RequestParam(required = false) String[] current_ids,
+                                                    HttpServletResponse res) {
+        if (user != null) {
+            return this.coreInfoService.findRatingBetween(low, high, current_ids);
         } else {
             return Utils.unauthorizedAccess(res);
         }
