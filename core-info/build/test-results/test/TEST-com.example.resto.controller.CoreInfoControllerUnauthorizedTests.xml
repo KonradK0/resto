@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.resto.controller.CoreInfoControllerUnauthorizedTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2021-10-25T18:08:59" hostname="KKOMP" time="0.427">
+  <properties/>
+  <testcase name="testFindByNameUnauthorized()" classname="com.example.resto.controller.CoreInfoControllerUnauthorizedTests" time="0.256"/>
+  <testcase name="testFindByCuisineNameUnauthorized()" classname="com.example.resto.controller.CoreInfoControllerUnauthorizedTests" time="0.062"/>
+  <testcase name="testFindRatingRangeBetween()" classname="com.example.resto.controller.CoreInfoControllerUnauthorizedTests" time="0.061"/>
+  <testcase name="testFindPricingRangeBetweenUnauthorized()" classname="com.example.resto.controller.CoreInfoControllerUnauthorizedTests" time="0.039"/>
+  <system-out><![CDATA[20:08:55.883 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+20:08:55.892 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+20:08:55.943 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.example.resto.controller.CoreInfoControllerUnauthorizedTests] from class [org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper]
+20:08:55.963 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.example.resto.controller.CoreInfoControllerUnauthorizedTests], using SpringBootContextLoader
+20:08:55.963 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.resto.controller.CoreInfoControllerUnauthorizedTests]: class path resource [com/example/resto/controller/CoreInfoControllerUnauthorizedTests-context.xml] does not exist
+20:08:55.973 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.example.resto.controller.CoreInfoControllerUnauthorizedTests]: class path resource [com/example/resto/controller/CoreInfoControllerUnauthorizedTestsContext.groovy] does not exist
+20:08:55.973 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.example.resto.controller.CoreInfoControllerUnauthorizedTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+20:08:55.973 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.resto.controller.CoreInfoControllerUnauthorizedTests]: CoreInfoControllerUnauthorizedTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:08:56.092 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.example.resto.controller.CoreInfoControllerUnauthorizedTests]
+20:08:56.163 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\Konrad\Documents\edu\resto\core-info\build\classes\java\main\com\example\resto\RestoApplication.class]
+20:08:56.173 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.resto.RestoApplication for test class com.example.resto.controller.CoreInfoControllerUnauthorizedTests
+20:08:56.173 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - @TestExecutionListeners is not present for class [com.example.resto.controller.CoreInfoControllerUnauthorizedTests]: using defaults.
+20:08:56.173 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener, org.springframework.security.test.context.support.ReactorContextTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+20:08:56.192 [Test worker] INFO org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@70271dca, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@14be5d8d, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@323743d0, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1a2d045, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@492354f6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2f173a6a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2736d59b, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@300109c0, org.springframework.security.test.context.support.WithSecurityContextTestExecutionListener@63d66fd2, org.springframework.test.context.event.EventPublishingTestExecutionListener@7584cda8, org.springframework.security.test.context.support.ReactorContextTestExecutionListener@648f448e, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@5cf80ed6, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@c805264, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5fba27d1, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@410fb39c, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@5d1d8bd5, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5380f160]
+20:08:56.202 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@40d103bb testClass = CoreInfoControllerUnauthorizedTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@c73b068 testClass = CoreInfoControllerUnauthorizedTests, locations = '{}', classes = '{class com.example.resto.RestoApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.OverrideAutoConfigurationContextCustomizerFactory$DisableAutoConfigurationContextCustomizer@5afac25b, org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@27887572, org.springframework.boot.test.autoconfigure.filter.TypeExcludeFiltersContextCustomizer@916d035, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@ec901e1f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@5cf0620e, [ImportsContextCustomizer@ba4d645 key = [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration, org.springframework.boot.autoconfigure.context.MessageSourceAutoConfiguration, org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration, org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration, org.springframework.boot.autoconfigure.groovy.template.GroovyTemplateAutoConfiguration, org.springframework.boot.autoconfigure.gson.GsonAutoConfiguration, org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration, org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration, org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration, org.springframework.boot.autoconfigure.jsonb.JsonbAutoConfiguration, org.springframework.boot.autoconfigure.mustache.MustacheAutoConfiguration, org.springframework.boot.autoconfigure.task.TaskExecutionAutoConfiguration, org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration, org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration, org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.client.servlet.OAuth2ClientAutoConfiguration, org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration, org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@33886c45, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@666c0d8e, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@8ca36db2, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@0], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map[[empty]]], class annotated with @DirtiesContext [false] with mode [null].
+20:08:56.263 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper=true}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.5.4)
+
+2021-10-25 20:08:56.768  INFO 14292 --- [    Test worker] .r.c.CoreInfoControllerUnauthorizedTests : Starting CoreInfoControllerUnauthorizedTests using Java 16.0.2 on KKomp with PID 14292 (started by Konrad in C:\Users\Konrad\Documents\edu\resto\core-info)
+2021-10-25 20:08:56.773  INFO 14292 --- [    Test worker] .r.c.CoreInfoControllerUnauthorizedTests : No active profile set, falling back to default profiles: default
+2021-10-25 20:08:59.403  INFO 14292 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-10-25 20:08:59.403  INFO 14292 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-10-25 20:08:59.408  INFO 14292 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2021-10-25 20:08:59.477  INFO 14292 --- [    Test worker] .r.c.CoreInfoControllerUnauthorizedTests : Started CoreInfoControllerUnauthorizedTests in 3.2 seconds (JVM running for 4.76)
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/public/coreinfo/Restaurant_1
+       Parameters = {current_ids=[1,2]}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.example.resto.controller.CoreInfoController
+           Method = com.example.resto.controller.CoreInfoController#findByName(Optional, String, String, String[], HttpServletResponse)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 401
+    Error message = 401 Unauthorized access
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/public/coreinfo/cuisine/italian
+       Parameters = {current_ids=[1,2]}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.example.resto.controller.CoreInfoController
+           Method = com.example.resto.controller.CoreInfoController#findByCuisines_Name(Optional, String, String, String[], HttpServletResponse)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 401
+    Error message = 401 Unauthorized access
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/public/coreinfo/rating
+       Parameters = {low=[1], high=[2], current_ids=[1,2]}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.example.resto.controller.CoreInfoController
+           Method = com.example.resto.controller.CoreInfoController#findRatingRangeBetween(Optional, String, int, int, String[], HttpServletResponse)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 401
+    Error message = 401 Unauthorized access
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /api/public/coreinfo/pricingrange
+       Parameters = {low=[1], high=[2], current_ids=[1,2]}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.example.resto.controller.CoreInfoController
+           Method = com.example.resto.controller.CoreInfoController#findPricingRangeBetween(Optional, String, int, int, String[], HttpServletResponse)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 401
+    Error message = 401 Unauthorized access
+          Headers = []
+     Content type = null
+             Body = 
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

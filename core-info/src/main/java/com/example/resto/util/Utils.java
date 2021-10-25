@@ -1,5 +1,6 @@
 package com.example.resto.util;
 
+import com.example.resto.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
