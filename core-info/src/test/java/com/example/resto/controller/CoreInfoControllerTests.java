@@ -18,6 +18,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -56,7 +57,7 @@ public class CoreInfoControllerTests {
         RestaurantCoreInfo japaneseRestaurant = new RestaurantCoreInfo("Japanese Restaurant", 2, 50, 12);
         japaneseRestaurant.setId(1L);
         List<RestaurantCoreInfo> restaurants = List.of(japaneseRestaurant);
-        when(service.findByName(any(), notNull())).thenReturn(restaurants);
+        when(service.findByName(any(), notNull())).thenReturn(Optional.of(restaurants));
         MvcResult mvcResult = mockMvc.perform(get("/api/public/coreinfo/Restaurant_1?current_ids=1,2").sessionAttrs(this.sessionAttr))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -72,7 +73,7 @@ public class CoreInfoControllerTests {
     public void testFindByCuisineName() throws Exception {
         RestaurantCoreInfo italianRestaurant = new RestaurantCoreInfo("Italian Restaurant", 1, 120, 33);
         List<RestaurantCoreInfo> restaurants = List.of(italianRestaurant);
-        when(service.findByCuisineName(any(), notNull())).thenReturn(restaurants);
+        when(service.findByCuisineName(any(), notNull())).thenReturn(Optional.of(restaurants));
         MvcResult mvcResult = mockMvc.perform(get("/api/public/coreinfo/cuisine/italian?current_ids=1,2").sessionAttrs(this.sessionAttr))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -88,7 +89,7 @@ public class CoreInfoControllerTests {
     public void testFindPricingRangeBetween() throws Exception {
         RestaurantCoreInfo italianRestaurant = new RestaurantCoreInfo("Italian Restaurant", 1, 120, 33);
         List<RestaurantCoreInfo> restaurants = List.of(italianRestaurant);
-        when(service.findPricingRangeBetween(anyInt(), anyInt(), any())).thenReturn(restaurants);
+        when(service.findPricingRangeBetween(anyInt(), anyInt(), any())).thenReturn(Optional.of(restaurants));
         MvcResult mvcResult = mockMvc.perform(get("/api/public/coreinfo/pricingrange?low=1&high=2&current_ids=1,2").sessionAttrs(this.sessionAttr))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -104,7 +105,7 @@ public class CoreInfoControllerTests {
     public void testFindRatingRangeBetween() throws Exception {
         RestaurantCoreInfo italianRestaurant = new RestaurantCoreInfo("Italian Restaurant", 1, 120, 33);
         List<RestaurantCoreInfo> restaurants = List.of(italianRestaurant);
-        when(service.findRatingBetween(anyDouble(), anyDouble(), any())).thenReturn(restaurants);
+        when(service.findRatingBetween(anyDouble(), anyDouble(), any())).thenReturn(Optional.of(restaurants));
         MvcResult mvcResult = mockMvc.perform(get("/api/public/coreinfo/rating?low=1&high=2&current_ids=1,2").sessionAttrs(this.sessionAttr))
                 .andDo(print())
                 .andExpect(status().isOk())

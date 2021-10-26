@@ -5,16 +5,17 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface RestaurantCoreInfoRepository extends CrudRepository<RestaurantCoreInfo, Long> {
-    List<RestaurantCoreInfo> findByName(String name);
+    Optional<List<RestaurantCoreInfo>> findByName(String name);
 
 //    RestaurantCoreInfo findById(long id);
 
-    List<RestaurantCoreInfo> findByCuisines_Name(String CuisineName);
+    Optional<List<RestaurantCoreInfo>> findByCuisines_Name(String CuisineName);
 
-    List<RestaurantCoreInfo> findPricingRangeBetween(int low, int high);
+    Optional<List<RestaurantCoreInfo>> findPricingRangeBetween(int low, int high);
 
-    List<RestaurantCoreInfo> findRatingBetween(double low, double high);
+    Optional<List<RestaurantCoreInfo>> findRatingBetween(double low, double high);
 }
