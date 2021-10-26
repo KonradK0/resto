@@ -19,8 +19,9 @@ import static org.mockito.Mockito.when;
 public class CoreInfoServiceTests {
 
     private final RestaurantCoreInfoRepository repository = Mockito.mock(RestaurantCoreInfoRepository.class);
+    private final CuisineService cuisineService = Mockito.mock(CuisineService.class);
 
-    private final CoreInfoService coreInfoService = new CoreInfoService(this.repository);
+    private final CoreInfoService coreInfoService = new CoreInfoService(this.repository, cuisineService);
 
     @Test
     public void testFindByName() {

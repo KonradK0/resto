@@ -7,9 +7,7 @@ import com.example.resto.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -18,9 +16,12 @@ public class CoreInfoService {
 
     RestaurantCoreInfoRepository coreInfoRepository;
 
+    CuisineService cuisineService;
+
     @Autowired
-    public CoreInfoService(RestaurantCoreInfoRepository coreInfoRepository) {
+    public CoreInfoService(RestaurantCoreInfoRepository coreInfoRepository, CuisineService cuisineService) {
         this.coreInfoRepository = coreInfoRepository;
+        this.cuisineService = cuisineService;
     }
 
     public Optional<List<RestaurantCoreInfo>> findByName(String name, Optional<String[]> current_ids) {
@@ -52,12 +53,34 @@ public class CoreInfoService {
         return this.coreInfoRepository.pricingRangeBetween(low, high);
     }
 
-    public Optional<List<RestaurantCoreInfo>> findRatingBetween(double low, double high, Optional<String[]> current_ids){
+    public Optional<List<RestaurantCoreInfo>> findRatingBetween(double low, double high, Optional<String[]> current_ids) {
         if (current_ids.isPresent()) {
             Predicate<RestaurantCoreInfo> findRatingBetweenPredicate = rci -> (Utils.isBetween(rci.getRating(), low, high));
             return getRestaurantCoreInfos(current_ids.get(), findRatingBetweenPredicate);
         }
         return this.coreInfoRepository.ratingBetween(low, high);
+    }
+
+    public RestaurantCoreInfo save(RestaurantCoreInfo restaurantCoreInfo) {
+        Set<Cuisine> cuisines = this.cuisineService.saveNewCuisines(restaurantCoreInfo);
+        restaurantCoreInfo.setCuisines(cuisines);
+        return this.coreInfoRepository.save(restaurantCoreInfo);
+    }
+
+    public RestaurantCoreInfo updateById(long rci_id, RestaurantCoreInfo newRci) {
+        RestaurantCoreInfo old = this.coreInfoRepository.findById(rci_id)
+                .orElseThrow(() -> new NoSuchElementException("No such element with id " + rci_id));
+        old.setName(newRci.getName());
+        old.setPricingRange(newRci.getPricingRange());
+        old.setRating(newRci.getRatingSum());
+        old.setNumOfRatings(newRci.getNumOfRatings());
+        old.setRating(newRci.getRating());
+        old.setCuisines(newRci.getCuisines());
+        return this.coreInfoRepository.save(old);
+    }
+
+    public void deleteById(long id) {
+        this.coreInfoRepository.deleteById(id);
     }
 
     private Optional<List<RestaurantCoreInfo>> getRestaurantCoreInfos(String[] current_ids, Predicate<RestaurantCoreInfo> filterPredicate) {

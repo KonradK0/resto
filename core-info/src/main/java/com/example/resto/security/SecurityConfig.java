@@ -32,17 +32,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity http) throws Exception {
 
         http.authorizeRequests()
-                .mvcMatchers("/api/coreinfo/public/**").permitAll()
-                .anyRequest()
-                .authenticated()
-                .and()
-                .cors()
-                .configurationSource(corsConfigurationSource())
-                .and()
-                .oauth2ResourceServer()
-                .jwt()
-                .decoder(jwtDecoder())
-                .jwtAuthenticationConverter(jwtAuthenticationConverter());
+                .mvcMatchers("/api/coreinfo/**", "/api/coreinfo", "/api/coreinfo/")
+                .permitAll().and().cors().configurationSource(corsConfigurationSource());
+//                .anyRequest()
+//                .authenticated()
+//                .and()
+//                .cors()
+//                .configurationSource(corsConfigurationSource())
+//                .and()
+//                .oauth2ResourceServer()
+//                .jwt()
+//                .decoder(jwtDecoder())
+//                .jwtAuthenticationConverter(jwtAuthenticationConverter());
     }
 
     CorsConfigurationSource corsConfigurationSource() {

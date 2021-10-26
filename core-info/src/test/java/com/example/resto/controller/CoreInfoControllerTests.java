@@ -1,8 +1,5 @@
 package com.example.resto.controller;
 
-
-//import com.example.resto.auth.AudienceValidator;
-//import com.example.resto.auth.SecurityConfig;
 import com.example.resto.interceptors.RestInterceptorAll;
 import com.example.resto.model.RestaurantCoreInfo;
 import com.example.resto.model.User;
@@ -15,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
@@ -26,8 +25,9 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -44,15 +44,14 @@ public class CoreInfoControllerTests {
     @MockBean
     private CoreInfoService service;
 
-
     private final ObjectMapper objectMapper = new ObjectMapper();
 
     private final Map<String, Object> sessionAttr = new HashMap<>();
 
     @BeforeEach
     void initTest() throws Exception {
-        this.sessionAttr.clear();
         this.sessionAttr.put("user", new User());
+        System.out.println(sessionAttr.size());
         when(interceptor.preHandle(any(), any(), any())).thenReturn(true);
     }
 
@@ -122,4 +121,64 @@ public class CoreInfoControllerTests {
 
     }
 
+    @Test
+    @WithMockUser(authorities = "create:coreinfo")
+    public void testSave() throws Exception {
+        RestaurantCoreInfo italianRestaurant = new RestaurantCoreInfo("Italian Restaurant", 1, 120, 33);
+        when(this.service.save(any())).thenReturn(italianRestaurant);
+        String expected = objectMapper.writeValueAsString(italianRestaurant);
+
+        MvcResult mvcResult = mockMvc.perform(
+                        post("/api/coreinfo/")
+                                .sessionAttrs(this.sessionAttr)
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .content(expected)
+                )
+                .andDo(print())
+                .andExpect(status().isCreated())
+                .andReturn();
+        String actual = mvcResult.getResponse().getContentAsString();
+
+        assertNotNull(actual);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    @WithMockUser(authorities = "update:coreinfo")
+    public void testUpdate() throws Exception {
+        RestaurantCoreInfo italianRestaurant = new RestaurantCoreInfo("Italian Restaurant", 1, 120, 33);
+        when(this.service.updateById(anyLong(), any())).thenReturn(italianRestaurant);
+        String expected = objectMapper.writeValueAsString(italianRestaurant);
+
+        MvcResult mvcResult = mockMvc.perform(
+                        put("/api/coreinfo/1")
+                                .sessionAttrs(this.sessionAttr)
+                                .contentType(MediaType.APPLICATION_JSON)
+                                .content(expected)
+                )
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andReturn();
+        String actual = mvcResult.getResponse().getContentAsString();
+
+        assertNotNull(actual);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    @WithMockUser(authorities = "delete:coreinfo")
+    public void testDelete() throws Exception {
+        doNothing().when(this.service).deleteById(anyLong());
+
+        MvcResult mvcResult = mockMvc.perform(
+                        delete("/api/coreinfo/1")
+                                .sessionAttrs(this.sessionAttr)
+                )
+                .andDo(print())
+                .andExpect(status().isNoContent())
+                .andReturn();
+        String actual = mvcResult.getResponse().getContentAsString();
+
+        assertNotNull(actual);
+    }
 }

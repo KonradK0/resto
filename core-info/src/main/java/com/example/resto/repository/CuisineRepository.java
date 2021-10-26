@@ -9,5 +9,5 @@ import java.util.Optional;
 
 @Repository
 public interface CuisineRepository extends CrudRepository<Cuisine, Long> {
-    Optional<List<Cuisine>> findByName(String name);
+    Optional<Cuisine> findByName(String name);
 }
