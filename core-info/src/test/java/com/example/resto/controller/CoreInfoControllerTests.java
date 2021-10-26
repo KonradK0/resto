@@ -1,6 +1,8 @@
 package com.example.resto.controller;
 
 
+//import com.example.resto.auth.AudienceValidator;
+//import com.example.resto.auth.SecurityConfig;
 import com.example.resto.interceptors.RestInterceptorAll;
 import com.example.resto.model.RestaurantCoreInfo;
 import com.example.resto.model.User;
@@ -10,6 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
@@ -29,6 +32,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest
+@AutoConfigureMockMvc(addFilters = false)
 public class CoreInfoControllerTests {
 
     @MockBean
@@ -58,7 +62,7 @@ public class CoreInfoControllerTests {
         japaneseRestaurant.setId(1L);
         List<RestaurantCoreInfo> restaurants = List.of(japaneseRestaurant);
         when(service.findByName(any(), notNull())).thenReturn(Optional.of(restaurants));
-        MvcResult mvcResult = mockMvc.perform(get("/api/public/coreinfo/Restaurant_1?current_ids=1,2").sessionAttrs(this.sessionAttr))
+        MvcResult mvcResult = mockMvc.perform(get("/api/coreinfo/public/Restaurant_1?current_ids=1,2").sessionAttrs(this.sessionAttr))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andReturn();
@@ -74,7 +78,7 @@ public class CoreInfoControllerTests {
         RestaurantCoreInfo italianRestaurant = new RestaurantCoreInfo("Italian Restaurant", 1, 120, 33);
         List<RestaurantCoreInfo> restaurants = List.of(italianRestaurant);
         when(service.findByCuisineName(any(), notNull())).thenReturn(Optional.of(restaurants));
-        MvcResult mvcResult = mockMvc.perform(get("/api/public/coreinfo/cuisine/italian?current_ids=1,2").sessionAttrs(this.sessionAttr))
+        MvcResult mvcResult = mockMvc.perform(get("/api/coreinfo/public/cuisine/italian?current_ids=1,2").sessionAttrs(this.sessionAttr))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andReturn();
@@ -90,7 +94,7 @@ public class CoreInfoControllerTests {
         RestaurantCoreInfo italianRestaurant = new RestaurantCoreInfo("Italian Restaurant", 1, 120, 33);
         List<RestaurantCoreInfo> restaurants = List.of(italianRestaurant);
         when(service.findPricingRangeBetween(anyInt(), anyInt(), any())).thenReturn(Optional.of(restaurants));
-        MvcResult mvcResult = mockMvc.perform(get("/api/public/coreinfo/pricingrange?low=1&high=2&current_ids=1,2").sessionAttrs(this.sessionAttr))
+        MvcResult mvcResult = mockMvc.perform(get("/api/coreinfo/public/pricingrange?low=1&high=2&current_ids=1,2").sessionAttrs(this.sessionAttr))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andReturn();
@@ -106,7 +110,7 @@ public class CoreInfoControllerTests {
         RestaurantCoreInfo italianRestaurant = new RestaurantCoreInfo("Italian Restaurant", 1, 120, 33);
         List<RestaurantCoreInfo> restaurants = List.of(italianRestaurant);
         when(service.findRatingBetween(anyDouble(), anyDouble(), any())).thenReturn(Optional.of(restaurants));
-        MvcResult mvcResult = mockMvc.perform(get("/api/public/coreinfo/rating?low=1&high=2&current_ids=1,2").sessionAttrs(this.sessionAttr))
+        MvcResult mvcResult = mockMvc.perform(get("/api/coreinfo/public/rating?low=1&high=2&current_ids=1,2").sessionAttrs(this.sessionAttr))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andReturn();

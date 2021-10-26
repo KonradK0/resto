@@ -16,7 +16,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(
-        value = "api/{scope}/coreinfo",
+        value = "api/coreinfo",
         produces = MediaType.APPLICATION_JSON_VALUE
 )
 public class CoreInfoController {
@@ -29,9 +29,8 @@ public class CoreInfoController {
         this.coreInfoService = coreInfoService;
     }
 
-    @GetMapping(value = "/{name}")
+    @GetMapping(value = "/public/{name}")
     public Optional<List<RestaurantCoreInfo>> findByName(@SessionAttribute Optional<User> user,
-                                               @PathVariable String scope,
                                                @PathVariable String name,
                                                @RequestParam Optional<String[]> current_ids,
                                                HttpServletResponse res) {
@@ -42,9 +41,8 @@ public class CoreInfoController {
         }
     }
 
-    @GetMapping(value = "/cuisine/{cuisineName}")
+    @GetMapping(value = "/public/cuisine/{cuisineName}")
     Optional<List<RestaurantCoreInfo>> findByCuisines_Name(@SessionAttribute Optional<User> user,
-                                                 @PathVariable String scope,
                                                  @PathVariable String cuisineName,
                                                  @RequestParam Optional<String[]> current_ids,
                                                  HttpServletResponse res) {
@@ -55,9 +53,8 @@ public class CoreInfoController {
         }
     }
 
-    @GetMapping(value = "/pricingrange")
+    @GetMapping(value = "/public/pricingrange")
     Optional<List<RestaurantCoreInfo>>  findPricingRangeBetween(@SessionAttribute Optional<User> user,
-                                                     @PathVariable String scope,
                                                      @RequestParam int low,
                                                      @RequestParam int high,
                                                      @RequestParam Optional<String[]> current_ids,
@@ -69,9 +66,8 @@ public class CoreInfoController {
         }
     }
 
-    @GetMapping(value = "/rating")
+    @GetMapping(value = "/public/rating")
     Optional<List<RestaurantCoreInfo>> findRatingRangeBetween(@SessionAttribute Optional<User> user,
-                                                    @PathVariable String scope,
                                                     @RequestParam int low,
                                                     @RequestParam int high,
                                                     @RequestParam Optional<String[]> current_ids,

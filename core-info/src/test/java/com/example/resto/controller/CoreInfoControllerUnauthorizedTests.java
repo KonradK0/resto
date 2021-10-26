@@ -5,6 +5,7 @@ import com.example.resto.service.CoreInfoService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
@@ -18,6 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest
+@AutoConfigureMockMvc(addFilters = false)
 public class CoreInfoControllerUnauthorizedTests {
 
     @MockBean
@@ -36,7 +38,7 @@ public class CoreInfoControllerUnauthorizedTests {
 
     @Test
     public void testFindByNameUnauthorized() throws Exception {
-        MvcResult mvcResult = mockMvc.perform(get("/api/public/coreinfo/Restaurant_1?current_ids=1,2"))
+        MvcResult mvcResult = mockMvc.perform(get("/api/coreinfo/public/Restaurant_1?current_ids=1,2"))
                 .andDo(print())
                 .andExpect(status().isUnauthorized())
                 .andReturn();
@@ -48,7 +50,7 @@ public class CoreInfoControllerUnauthorizedTests {
 
     @Test
     public void testFindByCuisineNameUnauthorized() throws Exception {
-        MvcResult mvcResult = mockMvc.perform(get("/api/public/coreinfo/cuisine/italian?current_ids=1,2"))
+        MvcResult mvcResult = mockMvc.perform(get("/api/coreinfo/public/cuisine/italian?current_ids=1,2"))
                 .andDo(print())
                 .andExpect(status().isUnauthorized())
                 .andReturn();
@@ -60,7 +62,7 @@ public class CoreInfoControllerUnauthorizedTests {
 
     @Test
     public void testFindPricingRangeBetweenUnauthorized() throws Exception {
-        MvcResult mvcResult = mockMvc.perform(get("/api/public/coreinfo/pricingrange?low=1&high=2&current_ids=1,2"))
+        MvcResult mvcResult = mockMvc.perform(get("/api/coreinfo/public/pricingrange?low=1&high=2&current_ids=1,2"))
                 .andDo(print())
                 .andExpect(status().isUnauthorized())
                 .andReturn();
@@ -72,7 +74,7 @@ public class CoreInfoControllerUnauthorizedTests {
 
     @Test
     public void testFindRatingRangeBetween() throws Exception {
-        MvcResult mvcResult = mockMvc.perform(get("/api/public/coreinfo/rating?low=1&high=2&current_ids=1,2"))
+        MvcResult mvcResult = mockMvc.perform(get("/api/coreinfo/public/rating?low=1&high=2&current_ids=1,2"))
                 .andDo(print())
                 .andExpect(status().isUnauthorized())
                 .andReturn();

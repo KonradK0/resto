@@ -49,7 +49,7 @@ public class CoreInfoService {
             Predicate<RestaurantCoreInfo> pricingRangeBetweenPredicate = rci -> (Utils.isBetween(rci.getPricingRange(), low, high));
             return getRestaurantCoreInfos(current_ids.get(), pricingRangeBetweenPredicate);
         }
-        return this.coreInfoRepository.findPricingRangeBetween(low, high);
+        return this.coreInfoRepository.pricingRangeBetween(low, high);
     }
 
     public Optional<List<RestaurantCoreInfo>> findRatingBetween(double low, double high, Optional<String[]> current_ids){
@@ -57,7 +57,7 @@ public class CoreInfoService {
             Predicate<RestaurantCoreInfo> findRatingBetweenPredicate = rci -> (Utils.isBetween(rci.getRating(), low, high));
             return getRestaurantCoreInfos(current_ids.get(), findRatingBetweenPredicate);
         }
-        return this.coreInfoRepository.findRatingBetween(low, high);
+        return this.coreInfoRepository.ratingBetween(low, high);
     }
 
     private Optional<List<RestaurantCoreInfo>> getRestaurantCoreInfos(String[] current_ids, Predicate<RestaurantCoreInfo> filterPredicate) {

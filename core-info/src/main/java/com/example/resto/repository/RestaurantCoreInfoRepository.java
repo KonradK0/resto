@@ -15,7 +15,7 @@ public interface RestaurantCoreInfoRepository extends CrudRepository<RestaurantC
 
     Optional<List<RestaurantCoreInfo>> findByCuisines_Name(String CuisineName);
 
-    Optional<List<RestaurantCoreInfo>> findPricingRangeBetween(int low, int high);
+    Optional<List<RestaurantCoreInfo>> pricingRangeBetween(int low, int high);
 
-    Optional<List<RestaurantCoreInfo>> findRatingBetween(double low, double high);
+    Optional<List<RestaurantCoreInfo>> ratingBetween(double low, double high);
 }
